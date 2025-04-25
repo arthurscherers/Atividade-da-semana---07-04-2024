@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Atividades em JavaScript</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f2f6fa;
+      margin: 0;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 2rem;
+    }
+
+    .card {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      margin-bottom: 1.5rem;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      color: #0077cc;
+    }
+
+    button {
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #005fa3;
+    }
+
+    .resultado {
+      font-weight: bold;
+      margin-top: 10px;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💡 Atividades com JavaScript</h1>
+
+  <div class="card">
+    <h2>1. Mensagem "Olá Mundo"</h2>
+    <button onclick="mostrarMensagem()">Clique aqui</button>
+  </div>
+
+  <div class="card">
+    <h2>2. Soma de 2 Números</h2>
+    <button onclick="somarNumeros()">Somar 8 + 5</button>
+    <p class="resultado" id="res-soma"></p>
+  </div>
+
+  <div class="card">
+    <h2>3. Alterar elemento por <code>id</code></h2>
+    <p id="texto-id">Texto original</p>
+    <button onclick="alterarPorId()">Alterar</button>
+  </div>
+
+  <div class="card">
+    <h2>4. Alterar por <code>name</code></h2>
+    <p name="texto-name">Texto original</p>
+    <button onclick="alterarPorName()">Alterar</button>
+  </div>
+
+  <div class="card">
+    <h2>5. Alterar por <code>class</code></h2>
+    <p class="texto-class">Texto original</p>
+    <button onclick="alterarPorClass()">Alterar</button>
+  </div>
+
+  <script>
+    const mostrarMensagem = () => {
+      alert("Olá Mundo 👋");
+    };
+
+    const somarNumeros = () => {
+      const a = 8;
+      const b = 5;
+      const resultado = a + b;
+      document.getElementById("res-soma").textContent = `Resultado: ${resultado}`;
+    };
+
+    const alterarPorId = () => {
+      document.getElementById("texto-id").textContent = "Texto alterado via ID!";
+    };
+
+    const alterarPorName = () => {
+      const elementos = document.getElementsByName("texto-name");
+      if (elementos.length) {
+        elementos[0].textContent = "Texto alterado via Name!";
+      }
+    };
+
+    const alterarPorClass = () => {
+      const elementos = document.getElementsByClassName("texto-class");
+      if (elementos.length) {
+        elementos[0].textContent = "Texto alterado via Class!";
+      }
+    };
+  </script>
+
+</body>
+</html>
